@@ -12,9 +12,15 @@
   <h3>No engineers have been added yet!</h3>
 } 
 
+<table class="table table-hover table-responsive-md">
+      <thead>
+        <th>All Current Engineers:</th>
+      </thead>
 @foreach (Engineer engineer in Model)
 {
-  <li>@Html.ActionLink($"{engineer.Name}", "Details", new { id = engineer.EngineerId })</li>
+  <tr>
+    <td>@Html.ActionLink($"{engineer.Name}", "Details", new { id = engineer.EngineerId })</td>
+  </tr>
 }
-
+</table>
 <p>@Html.ActionLink("Add new engineer", "Create")</p>
