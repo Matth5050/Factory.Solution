@@ -32,58 +32,65 @@
 _This is an MVC application that was built using C#, Entity, and utilies many-to-many database interactions. The application allows the manager to quickly and easily identify a complete list of both their engineers and their machines. The program allows the manager to add an engineer name as well as add a list of machines that the engineer can work on._
 
 ---
-## Setup and Installation Requirements
-
+<details>
+<summary><strong>GitBash and MySQL Workbench Setup</strong></summary>
+<ol>
+<li>https://git-scm.com/download/  
+<li>Download Git and follow the setup wizard. 
+<li>https://dev.mysql.com/downloads/workbench/     
+<li>Download MySQL Workbench
+<li>Follow the setup wizard & create a localhost server on port 3306.
+<li>Keep track of your username and password, this will be used in the connection steps of <strong>"SQL Workbench Configuration"</strong>  
+</details>
 <details>
 <summary><strong>Initial Setup</strong></summary>
 <ol>
 <li>Copy the git repository url: https://github.com/Matth5050/Factory.Solution
-<li>Open a shell program and navigate to your desktop.
-<li>Clone the repository for this project using the "git clone" command and including the copied URL.
-<li>While still in the shell program, navigate to the root directory of the newly created file named "Factory".
-<li>From the root directory, navigate to the "Factory" directory.
-<li>Move onto "SQL Workbench" instructions below to re-create database necessary to run this project.
+<li>Open a terminal and navigate to your Desktop with <strong>cd</strong> command
+<li>Run,   
+<strong>$ git clone https://github.com/Matth5050/Factory.Solution</strong>
+<li>In the terminal, navigate into the root directory of the cloned project folder "Factory.Solution".
+<li>Navigate to the projects root directory, "Factory".
+<li>Move onto "SQL Workbench Configuration" instructions below to build the necessary database.
 <br>
 </details>
 
 <details>
 <summary><strong>SQL Workbench Configuration</strong></summary>
 <ol>
-<li>Create an appsettings.json file in the "HairSalon" directory of the project*  
+<li>Create an appsetting.json file in the "Factory" directory  
    <pre>Factory
-    └── appsettings.json</pre>
-<li> Insert the following code** : <br>
+    └── appsetting.json</pre>
+<li> Insert the following code: <br>
 
 <pre>{
   "ConnectionStrings": {
-    "DefaultConnection": "Server=localhost;Port=3306;database=matthew_herbert;uid=root;pwd=[YOUR-PASSWORD-HERE];"
+    "DefaultConnection": "Server=localhost;Port=3306;database=matthew_herbert;uid=[YOUR-USERNAME-HERE];pwd=[YOUR-PASSWORD-HERE];"
   }
 }</pre>
-<small>*note: you must include your password in the code block section labeled "YOUR-PASSWORD-HERE".</small><br>
-<small>**note: if you plan to push this cloned project to a public-facing repository, remember to add the appsettings.json file to your .gitignore before doing so.</small>
+<small>*Note: you must include your password in the code block section labeled "YOUR-PASSWORD-HERE".</small><br>
+<small>**Note: you must include your username in the code block section labeled "YOUR-USERNAME-HERE".</small><br>
+<small>***Note: if you plan to push this cloned project to a public-facing repository, remember to add the appsettings.json file to your .gitignore before doing so.</small>
 
-<li>Once "appsettings.json" file has been created, navigate back to SQL Workbench.
-<li>Import the database named "matthew_herbert.sql" from the root directory of the project.<br><br>
-How to Import a Database:
+<li>In root directory of project folder "Factory", run  
+<strong>$ dotnet ef migrations add restoreDatabase</strong>
+<li>Then run <strong>$ dotnet ef database update</strong>
+
 <ol> 
   <li>Open SQL Workbench.
-  <li>Navigate to "Administration" tab in SQL Workbench.
-  <li>Click "Data Import/Restore".
-  <li>Select the radio button "Import from Self-Contained File" and include file path to the sql file of this project you cloned to your machine.
-  <li>In "Default Schema to be Imported to" click "New".
-  <li>Name the schema "matthew_herbert" then click "OK".
-  <li>Once named, switch to "Import Progress" tab and click "Start Import".
+  <li>Navigate to "matthew_herbert" schema.
+  <li>Click the drop down, select "Tables" drop down.
+  <li>Verify the tables, you should see <strong>engineers</strong>, <strong>machines</strong>, & <strong>engineermachine</strong>.
   
 </details>
 
 <details>
 <summary><strong>To Run</strong></summary>
 Navigate to:  
-   <strong>Factory
-   
+   <strong>Factory</strong>
 
-Run ```$ dotnet restore``` in the console.<br>
-Run ```$ dotnet run``` in the console
+Run ```$ dotnet restore``` in the terminal.<br>
+Run ```$ dotnet run``` in the terminal.
 </details>
 <br>
 
