@@ -12,7 +12,7 @@
     @Html.TextBoxFor(model => model.Name)
 
     @Html.Label("Select Machine")
-    @Html.DropDownList("MachineId")
+    @Html.DropDownList("MachineId", "Create w/o machine association")
 
     <input type="submit" value="Add new engineer" class="btn btn-default" />
 }
