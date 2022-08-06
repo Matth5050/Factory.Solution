@@ -24,7 +24,6 @@ a:hover {
 }
 
 ul {
-  /* list-style-position: inside; */
   display: inline-block;
   text-align: center;
 }
@@ -58,12 +57,6 @@ div#footer {
   text-align: center;
 }
 
-table {
-  height: 20px;
-  /* overflow: hidden; */
-  /* border-collapse: collapse;
-  border: none; */
-}
 
 
 
