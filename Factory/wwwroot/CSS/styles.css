@@ -58,3 +58,12 @@ div#footer {
   text-align: center;
 }
 
+table {
+  height: 20px;
+  /* overflow: hidden; */
+  /* border-collapse: collapse;
+  border: none; */
+}
+
+
+
