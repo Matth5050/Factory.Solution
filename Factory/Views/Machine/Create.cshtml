@@ -7,11 +7,11 @@
 <h4>Add a new machine</h4>
 @using (Html.BeginForm())
 {
-   @Html.LabelFor(model => model.Name)
-   @Html.TextBoxFor(model => model.Name)
+  @Html.LabelFor(model => model.Name)
+  @Html.TextBoxFor(model => model.Name)
 
-    @Html.Label("Select Engineer")
-    @Html.DropDownList("EngineerId", "Create w/o engineer association")
+  @Html.Label("Select Engineer")
+  @Html.DropDownList("EngineerId", "Create w/o engineer association")
 
   <input type="submit" value="Add new machine" />
 }

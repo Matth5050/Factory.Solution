@@ -23,7 +23,7 @@ else
   </ul>
 }
 
-  <ul>
+<ul>
   @foreach(var join in Model.JoinEntities)
   {
     @using (Html.BeginForm("DeleteMachine", "Engineer"))
@@ -32,7 +32,7 @@ else
       <input type="submit" value="Delete"/>
     }
   }
-  </ul>
+</ul>
 
 <p>@Html.ActionLink("Back to list", "Index")</p>
 <p>@Html.ActionLink("Edit Engineer", "Edit", new { id = Model.EngineerId })</p>
