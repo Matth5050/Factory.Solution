@@ -8,12 +8,12 @@
 
 @using (Html.BeginForm())
 {
-    @Html.LabelFor(model => model.Name)
-    @Html.TextBoxFor(model => model.Name)
+  @Html.LabelFor(model => model.Name)
+  @Html.TextBoxFor(model => model.Name)
 
-    @Html.Label("Select Machine")
-    @Html.DropDownList("MachineId", "Create w/o machine association")
+  @Html.Label("Select Machine")
+  @Html.DropDownList("MachineId", "Create w/o machine association")
 
-    <input type="submit" value="Add new engineer" class="btn btn-default" />
+  <input type="submit" value="Add new engineer" class="btn btn-default" />
 }
 <p>@Html.ActionLink("Show all engineers", "Index")</p>
