@@ -1,0 +1,37 @@
+@{
+  Layout = "_Layout";
+}
+
+@using Factory.Models;
+@model dynamic;
+
+<h1>Engineers and Machines</h1>
+
+@* @if (@Model.Count == 0)
+{
+  <h3>No engineers have been added yet!</h3>
+}  *@
+<div class="row">
+  <div class="col-6">
+    <h3>Engineers</h3>
+    @foreach (Engineer engineer in Model.Engineers)
+    {
+        
+        <li>@Html.ActionLink($"{engineer.Name}", "Details", "Engineer", new { id = engineer.EngineerId })</li>
+      
+    }
+  </div>
+
+  <div class="col-6">
+    <h3>Machines</h3>
+    @foreach (Machine machine in Model.Machines)
+    {
+        <li>@Html.ActionLink($"{machine.Name}", "Details", "Machine", new { id = machine.MachineId })</li>
+    }
+  </div>
+</div>
+
+<br>
+<p>@Html.ActionLink("Add new machine", "Create", "Machine")</p>
+<p>@Html.ActionLink("Add new engineer", "Create", "Engineer")</p>
+<p>@Html.ActionLink("Home", "Index", "Home")</p>
